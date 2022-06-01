@@ -4,6 +4,15 @@ body {
   min-width: 1200px;
 }
 
+@keyframes dropdown {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* header */
 #header {
   width: 100%;
@@ -25,16 +34,16 @@ body {
   align-self: center;
 }
 
-#header .h-inner .gnb ul li {
+/* main_gnb */
+#header .h-inner .gnb .main_gnb .gnbNav {
   position: relative;
   float: left;
-  font-size: 23px;
   line-height: 70px;
   padding: 0 44px;
   font-weight: 400;
 }
 
-#header .h-inner .gnb ul li::before {
+#header .h-inner .gnb .main_gnb .gnbNav::before {
   content: '';
   position: absolute;
   display: inline-block;
@@ -45,14 +54,41 @@ body {
   background-color: #ddd;
 }
 
-#header .h-inner .gnb ul li:first-child::before {
+#header .h-inner .gnb .main_gnb .gnbNav:first-child::before {
   display: none;
 }
 
-#header .h-inner .gnb ul li a {
+#header .h-inner .gnb .main_gnb .gnbNav a {
+  font-size: 23px;
   color: #333;
 }
 
+#header .h-inner .gnb .main_gnb .gnbNav:hover > .submenu {
+  display: block;
+  animation-name: dropdown;
+}
+
+#header .h-inner .gnb .main_gnb .gnbNav .submenu {
+  position: absolute;
+  width: 200px;
+  height: 400px;
+  left: 0px;
+  padding: 15px;
+  padding-top: 35px;
+  /* background-color: red; */
+  display: none;
+}
+
+#header .h-inner .gnb .main_gnb .gnbNav .submenu li a {
+  display: block;
+  font-size: 16px;
+  color: #666;
+  line-height: 24px;
+  height: 40px;
+  /* padding: 8px 0; */
+}
+
+/* mobile-btn */
 input[type="checkbox"]#mobile-check {
   display: none;
 }
