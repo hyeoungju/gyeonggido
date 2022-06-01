@@ -4,83 +4,150 @@ body {
   min-width: 1200px;
 }
 
+/* header */
 #header {
-  display: flex;
-  justify-content:space-between;
-  align-items:flex-end;
   width: 100%;
   height: 140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   border-bottom: 1px solid #ddd;
   background: #fff;
 }
 
-#header .logo {
-  position: absolute;
-  vertical-align: center;
+#header .h-inner {
+  width: 1200px;
+  margin: 0 auto;
 }
 
-#header .gnb {
+#header .h-inner .logo {
   float: left;
+  align-self: center;
 }
 
-#header .gnb ul li {
+#header .h-inner .gnb ul li {
+  position: relative;
   float: left;
   font-size: 23px;
   line-height: 70px;
   padding: 0 44px;
-  letter-spacing: -1px;
+  font-weight: 400;
 }
 
-#header .gnb ul li a {
+#header .h-inner .gnb ul li::before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  top: calc(50% - 8px);
+  left: 0;
+  background-color: #ddd;
+}
+
+#header .h-inner .gnb ul li:first-child::before {
+  display: none;
+}
+
+#header .h-inner .gnb ul li a {
   color: #333;
 }
 
 input[type="checkbox"]#mobile-check {
-  /* display: none; */
+  display: none;
 }
 
-#header .mobile-btn {
-  float: right;
+#header .h-inner .mobile-btn {
+  position: relative;
+  top: 25px;
 }
 
-#header .mobile-btn .mobile-btn-line span {
+#header .h-inner .mobile-btn #mobile-btn-line {
   position: absolute;
-  display: block;
-  top: 20px;
+  width: 30px;
+  height: 20px;
+  /* background: red; */
+  cursor: pointer;
 }
 
-#header .mobile-btn .mobile-btn-line > span {
+#header .h-inner .mobile-btn #mobile-btn-line > span {
   position: absolute;
-  width: 32px;
+  top: 10px;
+  right: 0;
+  width: 30px;
   height: 1.6px;
-  top: 20px;
   background: #666;
 }
 
-#header .mobile-btn .mobile-btn-line span:nth-child(1) {
-  position: absolute;
-  top: 12px;
+#header .h-inner .mobile-btn #mobile-btn-line > span:nth-child(1) {
+  top: 0;
 }
 
-#header .mobile-btn .mobile-btn-line span:nth-child(3) {
-  position: absolute;
-  top: 28px;
+#header .h-inner .mobile-btn #mobile-btn-line > span:nth-child(3) {
+  top: 20px;
 }
 
-#header .top-gnb {
-  position: absolute;
-  left: 330px;
-  top: 25px;
-  height: 45px;
+#header .h-inner .top-gnb {
+  position: relative;
+  display: inline-flex;
+  margin-left: 45px;
 }
 
-#header .top-gnb input {
+#header .h-inner .top-gnb input {
   width: 498px;
   height: 43px;
   text-indent: 20px;
   border: 1px solid #ddd;
 }
 
-#header .top-gnb-sign-in {
+#header .h-inner .top-gnb .keyboard {
+  position: absolute;
+  right: 320px;
+  top: 5px;
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  text-indent: -100000em;
+  background: url('../img/btn_keyboard.png');
+}
 
+#header .h-inner .top-gnb .search {
+  position: absolute;
+  right: 280px;
+  top: 5px;
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+  text-indent: -100000em;
+  background: url('../img/btn_search.png');
+}
+
+#header .h-inner .top-gnb .top-gnb-sign-in {
+  margin-left: 20px;
+  align-self: center;
+}
+
+#header .h-inner .top-gnb .top-gnb-sign-in .top-gnb-wrap li {
+  position: relative;
+  float: left;
+  padding: 0 10px;
+}
+
+#header .h-inner .top-gnb .top-gnb-sign-in .top-gnb-wrap li::before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 1px;
+  height: 8px;
+  top: calc(50% - 4px);
+  right: 0;
+  background-color: #ddd;
+}
+
+#header .h-inner .top-gnb .top-gnb-sign-in .top-gnb-wrap li:last-child:before {
+  display: none;
+}
+
+#header .h-inner .top-gnb .top-gnb-sign-in .top-gnb-wrap li a {
+  color: #666;
 }
